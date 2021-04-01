@@ -1,0 +1,47 @@
+language: node_js # 设置语言
+
+#node_js: stable # 设置相应版本
+node_js: v9.11.2 # 设置相应版本
+
+cache:
+    apt: true
+    directories:
+        - node_modules
+
+before_install:
+    - export TZ='Asia/Shanghai'
+    - npm install hexo-cli -g
+
+install:
+    - npm install # 安装hexo及插件
+
+script:
+    - hexo clean # 清除
+    - hexo g # 生成
+
+after_script:
+    - git clone ${GH_REF} pub_web
+    - ls pub_web
+    - rm -rf pub_web/*
+    - cp -rf public/* pub_web/
+    # - ls pub_web
+    - cd pub_web
+    - ls -alh
+    - cat index.html
+    # - git status
+    # - git remote -v
+    - git config user.name "chenzhijun"
+    - git config user.email "522858454@qq.com"
+    - git add .
+    - git commit -am "Travis CI Auto Builder,date:$(date '+%Y-%m-%d %H:%M:%S')"
+    # - git commit -am "Travis CI Auto Builder,date:$(date '+%Y-%m-%d %H:%M:%S' -d '+8 hour')"
+    # - git remote rm origin
+    # - git remote add origin ${GH_REF}
+    # - git push --force --quiet "${GITHUB_TOKEN}@${GH_REF}" master:master # GH_TOKEN是在Travis中配置token的名称
+    - git push origin master 
+branches:
+    only:
+        - master #只监测hexo分支，hexo是我的分支的名称，可根据自己情况设置
+env:
+    global:
+        - GH_REF: https://chenzhijun:${GITHUB_TOKEN}@github.com/chenzhijun/chenzhijun.github.com.git #设置GH_REF，注意更改yourname
