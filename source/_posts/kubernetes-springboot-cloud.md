@@ -35,9 +35,9 @@ categories: Kubernetes
     通过在项目中增加 `Dockerfile` 文件可以将业务服务制作成一个业务镜像，`Dockerfile`模板内容为：
     
     ```yaml
-    # registry-c.cmft.com 为金科提供的镜像仓库服务
+    # registry-c.chenzhijun.top 为金科提供的镜像仓库服务
     # openjdk:11.0.10-jdk-oracle 为原生 Java 基础镜像，可按需求定制
-    FROM registry-c.cmft.com/base/openjdk:11.0.10-jdk-oracle
+    FROM registry-c.chenzhijun.top/base/openjdk:11.0.10-jdk-oracle
     # 业务镜像构建指令
     COPY target/*.jar /home/
     # 容器运行时的默认启动命令，实际运行中可覆盖
@@ -78,7 +78,7 @@ categories: Kubernetes
               env:
                 - name: PROFILE_ACTIVE
                   value: prod
-              image: 'registry-c.cmft.com/czj/user-app:latest'
+              image: 'registry-c.chenzhijun.top/czj/user-app:latest'
               imagePullPolicy: Always
               name: user-app
               volumeMounts:
@@ -204,7 +204,7 @@ categories: Kubernetes
             - env:
                 - name: PROFILE_ACTIVE
                   value: eureka-1
-              image: 'registry-c.cmft.com/czj/eureka-server:latest'
+              image: 'registry-c.chenzhijun.top/czj/eureka-server:latest'
               imagePullPolicy: Always
               name: eureka-1
           dnsPolicy: ClusterFirst
@@ -233,7 +233,7 @@ categories: Kubernetes
             - env:
                 - name: PROFILE_ACTIVE
                   value: eureka-2
-              image: 'registry-c.cmft.com/czj/eureka-server:latest'
+              image: 'registry-c.chenzhijun.top/czj/eureka-server:latest'
               imagePullPolicy: Always
               name: eureka-2
               resources: {}
@@ -265,7 +265,7 @@ categories: Kubernetes
             - env:
                 - name: PROFILE_ACTIVE
                   value: eureka-3
-              image: 'registry-c.cmft.com/czj/eureka-server:latest'
+              image: 'registry-c.chenzhijun.top/czj/eureka-server:latest'
               imagePullPolicy: Always
               name: eureka-server
           dnsPolicy: ClusterFirst
@@ -366,7 +366,7 @@ spec:
     spec:
       containers:
         - name: user-app #修改为项目名就行
-          image: registry-c.cmft.com/czj/user-app:latest #修改为实际的 image-name
+          image: registry-c.chenzhijun.top/czj/user-app:latest #修改为实际的 image-name
           env:
           - name: PROFILE_ACTIVE
             value: prod

@@ -18,7 +18,7 @@ categories: Kubernetes
 oc adm policy add-scc-to-user hostnetwork -z router
 
 #创建一个 router ，指定 router-iot 为名字
-oc adm router router-iot --images='harbor.uat.cmft.com/openshift3/ose-haproxy-router:v3.11.170' --selector='node-role.kubernetes.io/iot-router=true' --labels='router=iot'
+oc adm router router-iot --images='harbor.uat.chenzhijun.top/openshift3/ose-haproxy-router:v3.11.170' --selector='node-role.kubernetes.io/iot-router=true' --labels='router=iot'
 
 #设置 router 的 ns 标签
 oc set env dc/router-iot NAMESPACE_LABELS="router=iot”

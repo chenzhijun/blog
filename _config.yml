@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 饺子
-subtitle: 优于别人，并不高贵，真正的高贵应该是优于过去的自己
-description: 自律自己的生活，力求不留下遗憾；悔恨自己的错误，力求不再重蹈覆辙
+title: 陈志军
+subtitle: 物来顺应，未来不迎，当时不杂，既过不恋
+description: 物来顺应，未来不迎，当时不杂，既过不恋
 author: 陈志军
 language: zh-Hans
 timezone: 
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://chenzhijun.me
+url: http://chenzhijun.top
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:

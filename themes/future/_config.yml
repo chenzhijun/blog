@@ -94,8 +94,8 @@ scheme: Muse
 social:
   GitHub: https://github.com/chenzhijun
   GitEE: https://git.oschina.net/chenzhijun
-  Weibo: http://weibo.com/3075356421
-  E-Mail: mailto:chenzhijun319@163.com
+ # Weibo: http://weibo.com/3075356421
+ # E-Mail: mailto:chenzhijun319@163.com
 
 # Social Links Icons
 # Icon Mapping:
@@ -126,8 +126,8 @@ links_title: 推荐阅读
 # links_layout: block
 links_layout: inline
 links:
-  陈志军的个人站: http://chenzhijun.github.com/
-  许凯的个人站: https://xkupc.github.io/
+  陈志军的个人站: http://chenzhijun.top/
+  #许凯的个人站: https://xkupc.github.io/
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg

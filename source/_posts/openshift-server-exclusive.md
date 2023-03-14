@@ -18,7 +18,7 @@ categories: Kubernetes
 ```bash
 spec:
   containers:
-  - image: harbor.uat.cmft.com/base/nginx:latest
+  - image: harbor.uat.chenzhijun.top/base/nginx:latest
     name: nginx
     resources: {}
   nodeSelector: 

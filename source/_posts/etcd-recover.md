@@ -32,7 +32,7 @@ openshift  版本：v170
     #oc delete nodes [UNKONWN_NODE]
     oc get nodes|grep master|grep NotReady|awk '{print $1}'|xargs -i oc delete nodes {}
     
-    cnsz92vl12816.cmftdc.cn
+    cnsz92vl12816.chenzhijun.cn
     ```
     
 2. 重新部署 ETCD-CA
@@ -86,7 +86,7 @@ curl -k -i -H "Authorization: $TOKEN" https://localhost:5001/api/v1/jobs/$UUID/s
 ansible-playbook -i ./inventory project/openshift-master/redeploy-openshift-ca.yml
 
 ##增加主机
-export ETCD_NODES=cnsz92vl12816.cmftdc.cn
+export ETCD_NODES=cnsz92vl12816.chenzhijun.cn
 
 ###1. 增加 hosts 配置
 curl -k -i -H "Authorization: $TOKEN" https://localhost:5001/api/v1/groups/new_nodes -X POST
@@ -116,7 +116,7 @@ curl -k -i -H "Authorization: $TOKEN" https://localhost:5001/api/v1/jobs/$UUID/s
 
 ```bash
 
-export ETCD_NODES=cnsz92vl12816.cmftdc.cn
+export ETCD_NODES=cnsz92vl12816.chenzhijun.cn
 
 curl -k -i -H "Authorization: $TOKEN" https://localhost:5001/api/v1/groups/new_etcd -X POST
 curl -k -i -H "Authorization: $TOKEN" https://localhost:5001/api/v1/hosts/$ETCD_NODES/groups/new_etcd -X POST
@@ -131,31 +131,31 @@ OSEv3:
   children:
     etcd:
       hosts:
-        cnsz92vl10440.cmftdc.cn: null
-        cnsz92vl10441.cmftdc.cn: null
+        cnsz92vl10440.chenzhijun.cn: null
+        cnsz92vl10441.chenzhijun.cn: null
     masters:
       hosts:
-        cnsz92vl10442.cmftdc.cn: null
-        cnsz92vl10440.cmftdc.cn: null
-        cnsz92vl10441.cmftdc.cn: null
+        cnsz92vl10442.chenzhijun.cn: null
+        cnsz92vl10440.chenzhijun.cn: null
+        cnsz92vl10441.chenzhijun.cn: null
     new_etcd:
       hosts:
-        cnsz92vl10442.cmftdc.cn: null
+        cnsz92vl10442.chenzhijun.cn: null
     nodes:
       hosts:
-        cnsz92vl10442.cmftdc.cn:
+        cnsz92vl10442.chenzhijun.cn:
           openshift_node_group_name: node-config-master
-        cnsz92vl10440.cmftdc.cn:
+        cnsz92vl10440.chenzhijun.cn:
           openshift_node_group_name: node-config-master
-        cnsz92vl10441.cmftdc.cn:
+        cnsz92vl10441.chenzhijun.cn:
           openshift_node_group_name: node-config-master
-        cnsz92vl10443.cmftdc.cn:
+        cnsz92vl10443.chenzhijun.cn:
           openshift_node_group_name: node-config-infra
-        cnsz92vl10445.cmftdc.cn:
+        cnsz92vl10445.chenzhijun.cn:
           openshift_node_group_name: node-config-infra
-        cnsz92vl10448.cmftdc.cn:
+        cnsz92vl10448.chenzhijun.cn:
           openshift_node_group_name: node-config-compute
-        cnsz92vl11127.cmftdc.cn:
+        cnsz92vl11127.chenzhijun.cn:
           openshift_node_group_name: node-config-infra
 
 ```
@@ -254,7 +254,7 @@ oc get pods -n kube-system
 2. 卡在某个 ansible 脚本
     
     ```bash
-    fatal: [cnsz92vl10442.cmftdc.cn -> cnsz92vl10441.cmftdc.cn]: FAILED! => {"changed": true, "cmd": ["oc", "adm", "create-api-client-config", "--certificate-authority=/etc/origin/master/ca.crt", "--client-dir=/tmp/openshift-ansible-O3mFaX", "--groups=system:masters,system:openshift-master", "--master=https://cnsz92vl10441:8443", "--public-master=https://cnsz92vl10441:8443", "--signer-cert=/etc/origin/master/ca.crt", "--signer-key=/etc/origin/master/ca.key", "--signer-serial=/etc/origin/master/ca.serial.txt", "--user=system:openshift-master", "--basename=openshift-master", "--expire-days=730"], "delta": "0:00:00.193549", "end": "2021-01-11 15:59:54.383491", "msg": "non-zero return code", "rc": 1, "start": "2021-01-11 15:59:54.189942", "stderr": "error: --signer-serial, \"/etc/origin/master/ca.serial.txt\" must be a valid file", "stderr_lines": ["error: --signer-serial, \"/etc/origin/master/ca.serial.txt\" must be a valid file"], "stdout": "", "stdout_lines": []}
+    fatal: [cnsz92vl10442.chenzhijun.cn -> cnsz92vl10441.chenzhijun.cn]: FAILED! => {"changed": true, "cmd": ["oc", "adm", "create-api-client-config", "--certificate-authority=/etc/origin/master/ca.crt", "--client-dir=/tmp/openshift-ansible-O3mFaX", "--groups=system:masters,system:openshift-master", "--master=https://cnsz92vl10441:8443", "--public-master=https://cnsz92vl10441:8443", "--signer-cert=/etc/origin/master/ca.crt", "--signer-key=/etc/origin/master/ca.key", "--signer-serial=/etc/origin/master/ca.serial.txt", "--user=system:openshift-master", "--basename=openshift-master", "--expire-days=730"], "delta": "0:00:00.193549", "end": "2021-01-11 15:59:54.383491", "msg": "non-zero return code", "rc": 1, "start": "2021-01-11 15:59:54.189942", "stderr": "error: --signer-serial, \"/etc/origin/master/ca.serial.txt\" must be a valid file", "stderr_lines": ["error: --signer-serial, \"/etc/origin/master/ca.serial.txt\" must be a valid file"], "stdout": "", "stdout_lines": []}
     
     看下是否 node 没有从集群中删除
     ```
@@ -266,7 +266,7 @@ oc get pods -n kube-system
     FAILED - RETRYING: Install the base package for admin tooling (3 retries left).
     FAILED - RETRYING: Install the base package for admin tooling (2 retries left).
     FAILED - RETRYING: Install the base package for admin tooling (1 retries left).
-    fatal: [cnsz92vl10442.cmftdc.cn -> cnsz92vl10441.cmftdc.cn]: FAILED! => {"attempts": 3, "changed": false, "msg": "No package matching 'atomic-openshift-3.11.170' found available, installed or updated", "rc": 126, "results": ["No package matching 'atomic-openshift-3.11.170' found available, installed or updated"]}
+    fatal: [cnsz92vl10442.chenzhijun.cn -> cnsz92vl10441.chenzhijun.cn]: FAILED! => {"attempts": 3, "changed": false, "msg": "No package matching 'atomic-openshift-3.11.170' found available, installed or updated", "rc": 126, "results": ["No package matching 'atomic-openshift-3.11.170' found available, installed or updated"]}
     
     ansible masters -i hosts -m shell -a "yum clean all"
     
@@ -283,7 +283,7 @@ oc get pods -n kube-system
     
     ansible-playbook -i ./inventory ./project/openshift-master/redeploy-certificates.yml
     
-    osm_etcd_image=harbor.uat.cmft.com/rhel7/etcd:3.2.22
+    osm_etcd_image=harbor.uat.chenzhijun.top/rhel7/etcd:3.2.22
     openshift_pkg_version=-3.11.170
     
     openshift_is_atomic=true
