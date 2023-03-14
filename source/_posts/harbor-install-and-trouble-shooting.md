@@ -45,7 +45,7 @@ _version = 1.7.0
 #The IP address or hostname to access admin UI and registry service.
 #DO NOT use localhost or 127.0.0.1, because Harbor needs to be accessed by external clients.
 #DO NOT comment out this line, modify the value of "hostname" directly, or the installation will fail.
-hostname = harbor.chenzhijun.me
+hostname = harbor.chenzhijun.top
 
 #The protocol for accessing the UI and token/notification service, by default it is http.
 #It can be set to https if ssl is enabled on nginx.
@@ -242,7 +242,7 @@ registry_storage_provider_name = s3
 
 #registry_storage_provider_config =
 #配置ceph 存储
-registry_storage_provider_config = bucket: f4gkewos23fdsf8fnfhG, region: default, accesskey: QaidfneuhgfE2dife, secretkey: qyIJDFNGIDNDKF8f2r3G5QSw, regionendpoint: http://ceph.chenzhijun.me, rootdirectory: /harbor-registry/di
+registry_storage_provider_config = bucket: f4gkewos23fdsf8fnfhG, region: default, accesskey: QaidfneuhgfE2dife, secretkey: qyIJDFNGIDNDKF8f2r3G5QSw, regionendpoint: http://ceph.chenzhijun.top, rootdirectory: /harbor-registry/di
 
 #registry_custom_ca_bundle is the path to the custom root ca certificate, which will be injected into the truststore
 #of registry's and chart repository's containers.  This is usually needed when the user hosts a internal storage with self signed certificate.
@@ -329,7 +329,7 @@ listen app2
     server s2  172.0.0.2:443   weight 1
 ```
 
-访问`harbor.chenzhijun.me`就可以了。
+访问`harbor.chenzhijun.top`就可以了。
 
 ![2020-04-26-21-43-00](/images/qiniu/2020-04-26-21-43-00.png)
 
@@ -337,15 +337,15 @@ listen app2
 安装完之后，你可能会遇到一些问题，比如在你直接 docker login 出现:
 
 ```
-Error response from daemon: Get https://harbor.chenzhijun.me/v2/: Get http://harbor.chenzhijun.me/service/token?account=admin&client_id=docker&offline_token=true&service=harbor-registry: dial tcp 100.77.53.130:80: getsockopt: connection refused
+Error response from daemon: Get https://harbor.chenzhijun.top/v2/: Get http://harbor.chenzhijun.top/service/token?account=admin&client_id=docker&offline_token=true&service=harbor-registry: dial tcp 100.77.53.130:80: getsockopt: connection refused
 ```
 
-你在页面登陆可以，当是你用 docker login却有问题。你可以`curl -X GET -I "https://harbor.chenzhijun.me/v2/"`看一下是否返回了一个 http 的请求。如果是的话，修改一个参数：`sed -i "s/realm: http/realm: https/g" common/config/registry/config.yml`;在`common/config/registry/config.yml`中修改返回值为 https：
+你在页面登陆可以，当是你用 docker login却有问题。你可以`curl -X GET -I "https://harbor.chenzhijun.top/v2/"`看一下是否返回了一个 http 的请求。如果是的话，修改一个参数：`sed -i "s/realm: http/realm: https/g" common/config/registry/config.yml`;在`common/config/registry/config.yml`中修改返回值为 https：
 ```yaml
 auth:
   token:
     issuer: harbor-token-issuer
-    realm: https://harbor.chenzhijun.me/service/token #就是这里要返回 https 而不是 http
+    realm: https://harbor.chenzhijun.top/service/token #就是这里要返回 https 而不是 http
     rootcertbundle: /etc/registry/root.crt
     service: harbor-registry
 ```
@@ -371,7 +371,7 @@ auth:
 ```conf
 frontend harbor
   bind *:80
-  bind *:443 ssl crt /data/harbor/harbor/chenzhijun.me.pem
+  bind *:443 ssl crt /data/harbor/harbor/chenzhijun.top.pem
   reqadd X-Forwarded-Proto:\ https
   default_backend  harbor-backend
 
@@ -409,9 +409,9 @@ https://github.com/goharbor/harbor/blob/release-1.8.0/docs/migration_guide.md
 
 helm 在 v3 之后（我只用了 v3）其实特别好用。在 github 上下载 helm 的安装包，然后把 helm 放到 /usr/local/bin 下面就可以直接执行 helm 命令了。当然前提是要本机有 kubectl，并且本地有 kubeconfig 文件`~/.kube/config`。这样我们就能愉快的使用 helm 了。那我们怎么使用 harbor 来管理我们的 helm chart 了？
 
-`helm repo add --username readonly --password Read2019 myharbor http://harbor.chenzhijun.me/chartrepo/helm-repo`
+`helm repo add --username readonly --password Read2019 myharbor http://harbor.chenzhijun.top/chartrepo/helm-repo`
 
-`http://harbor.chenzhijun.me/chartrepo/` 这一段是固定的，`helm-repo`是 harbor 中的 project 名。然后你将一个 chart 包导入：
+`http://harbor.chenzhijun.top/chartrepo/` 这一段是固定的，`helm-repo`是 harbor 中的 project 名。然后你将一个 chart 包导入：
 
 ![2020-04-26-22-25-53](/images/qiniu/2020-04-26-22-25-53.png)
 

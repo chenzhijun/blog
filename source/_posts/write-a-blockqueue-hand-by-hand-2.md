@@ -8,7 +8,7 @@ categories: Java
 
 # 自己用 Java 写一个阻塞队列(二)
 
-上一章 [自己用 Java 写一个阻塞队列](http://chenzhijun.me/2020/05/27/java-thread-lock-condition-blockqueue/) 我们写了一个初始阻塞队列。过了几天再回头看。嗯，好像看出哪里不对劲了。尝试改了一下。
+上一章 [自己用 Java 写一个阻塞队列](http://chenzhijun.top/2020/05/27/java-thread-lock-condition-blockqueue/) 我们写了一个初始阻塞队列。过了几天再回头看。嗯，好像看出哪里不对劲了。尝试改了一下。
 
 ## 原先队列实现的问题
 

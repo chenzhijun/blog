@@ -90,7 +90,7 @@ module.exports = {
         }
         location /m-api {
             proxy_pass http://localhost:8080/m-api;
-            #proxy_pass http://api-m.chenzhijun.me/m-api;
+            #proxy_pass http://api-m.chenzhijun.top/m-api;
         }
         #error_page  404              /404.html;
 

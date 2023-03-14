@@ -13,7 +13,7 @@ categories: Linux
 <!--more-->
 ## 1. crontab 实现脚本(应用)开机启动
 
-crontab的介绍在我的另一个博客里面[crontab使用linux crontab定时清理n天前的日志文件](http://chenzhijun.me/2018/10/29/linux-crontab-clean-ndays-log/)，这里我们介绍一个使用它来实现开机启动的用法。
+crontab的介绍在我的另一个博客里面[crontab使用linux crontab定时清理n天前的日志文件](http://chenzhijun.top/2018/10/29/linux-crontab-clean-ndays-log/)，这里我们介绍一个使用它来实现开机启动的用法。
 
 使用`crontab -e`，在crontab的编辑页面增加下面的内容:`@reboot sleep 10 && bash /root/test.sh`，sleep 10 是指在开机10秒后启动，启动的脚本是`/root/test.sh`。里面的内容，可以自己根据需要编写。最后要记住 **将test.sh脚本设置为可执行权限 744 或者 777 或者 a+x**。这样一个简单的开启启动任务就完成了。
 

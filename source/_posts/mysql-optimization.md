@@ -106,4 +106,4 @@ order by Total_R desc;
 
 #### 索引优化实例
 
-链接地址：[http://www.chenzhijun.me/2018/03/23/mysql-optimization-index/](http://chenzhijun.me/2018/03/23/mysql-optimization-index/)
+链接地址：[http://www.chenzhijun.top/2018/03/23/mysql-optimization-index/](http://chenzhijun.top/2018/03/23/mysql-optimization-index/)

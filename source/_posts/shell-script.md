@@ -241,7 +241,7 @@ esac
 
 ```
 
-之前跟同事学的一个很有用的基础脚本：[地址](http://chenzhijun.me/2018/05/10/a-easy-script/)
+之前跟同事学的一个很有用的基础脚本：[地址](http://chenzhijun.top/2018/05/10/a-easy-script/)
 
 ## shell中的循环：for，while
 

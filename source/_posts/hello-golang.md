@@ -106,7 +106,7 @@ GO 自带了一些常用工具，使用`go --help`就能看到。这里介绍常
 5. `go test`,golang测试工具
 6. `go get`,下载导入外部包
 
-go 也可以编译成其它平台的可执行文件，比如window下编译成Linux下的执行文件[golang编译成Linux环境下的二进制文件](http://chenzhijun.me/2019/03/31/windows-compile-golang-to-linux-running-script/)。
+go 也可以编译成其它平台的可执行文件，比如window下编译成Linux下的执行文件[golang编译成Linux环境下的二进制文件](http://chenzhijun.top/2019/03/31/windows-compile-golang-to-linux-running-script/)。
 
 go 的这些工具还是挺有用的，没事可以多用用。
 

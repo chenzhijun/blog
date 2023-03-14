@@ -337,4 +337,4 @@ ps:
 2：springboot actuator starter 能否去掉，去掉的话应该怎么实现？
 3：你觉得独立的注册中心未来的路会是怎样？
 
-今天5月31日，改日回答，[记住来看答案](http://chenzhijun.me/2019/05/31/springcloud-consul-integration/)。
+今天5月31日，改日回答，[记住来看答案](http://chenzhijun.top/2019/05/31/springcloud-consul-integration/)。

@@ -10,4 +10,4 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: http://www.chenzhijun.me/sitemap.xml
+Sitemap: http://www.chenzhijun.top/sitemap.xml

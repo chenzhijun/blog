@@ -9,7 +9,7 @@ categories: ELK
 
 # 使用Logstash发送异常邮件
 
-前端时间我们讲了[如何使用elk搭建日志系统](http://chenzhijun.me/2017/12/12/elasticsearch-logstash-kibana-part/),以及如何[使用Docker搭建ELK日志系统](http://chenzhijun.me/2017/12/27/elk-docker/)。虽然我们可以不用再去日志服务器找日志了，但是这样也有问题，我怎么知道什么时候会出现异常，不出现异常我也没必要去kibana查日志啊。
+前端时间我们讲了[如何使用elk搭建日志系统](http://chenzhijun.top/2017/12/12/elasticsearch-logstash-kibana-part/),以及如何[使用Docker搭建ELK日志系统](http://chenzhijun.top/2017/12/27/elk-docker/)。虽然我们可以不用再去日志服务器找日志了，但是这样也有问题，我怎么知道什么时候会出现异常，不出现异常我也没必要去kibana查日志啊。
 
 今天我们就要解决这个问题。当然解决的方式比较简单。如果有大神有更好的方式欢迎一起分享。
 

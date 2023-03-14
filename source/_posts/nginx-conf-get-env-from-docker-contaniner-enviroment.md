@@ -8,7 +8,7 @@ categories:
 
 # nginx从docker容器的环境变量中获取值
 
-这篇接上一篇[vuejs 从拷项目到开发上线](http://chenzhijun.me/2019/04/08/vuejs-starter/)
+这篇接上一篇[vuejs 从拷项目到开发上线](http://chenzhijun.top/2019/04/08/vuejs-starter/)
 
 ## Docker 部署
 

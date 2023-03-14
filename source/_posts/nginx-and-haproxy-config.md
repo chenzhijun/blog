@@ -149,7 +149,7 @@ listen Stats
 frontend https_frontend
   #bind *:80
   mode http
-  bind *:443 ssl crt  /app/haproxy/cert/chenzhijun.me.pem
+  bind *:443 ssl crt  /app/haproxy/cert/chenzhijun.top.pem
   acl secure dst_port eq 443
   http-request add-header X-Forwarded-Proto https if { ssl_fc }
   #redirect scheme https if !{ ssl_fc }
@@ -170,5 +170,5 @@ listen harbor-ceph
   bind 0.0.0.0:80
   mode tcp
   maxconn 4086
-  server s1 oss.chenzhijun.me:80
+  server s1 oss.chenzhijun.top:80
 ```
