@@ -1,8 +1,8 @@
 ---
 title: Prometheus+Grafana 搭建监控系统
 copyright: true
-date: 2018-04-26 22:16:38
-tags: prometheus
+date: 2022-04-26 22:03:19
+tags: Prometheus
 categories: 监控
 ---
 
@@ -10,7 +10,7 @@ categories: 监控
 
 今天将第一版监控系统上线，过程整个就是一路坎坷。不过踩坑，填坑，确实也是为自己积攒了一些小经验。
 
-## prometheus的服务发现
+## Prometheus的服务发现
 
 Prometheus的监控使用的是pull的模式，也就是每隔几秒钟去各个target采集一次metric。那么如果是多个target，如果是静态配置的话，那么就得在配置文件里面一个一个添加，尽管可以使用接口去更新配置文件，但如果服务太多，那工作量也很大。而且如果遇到微服务的情况并且容器化部署，那么可能ip地址都是随机改变的，那么就将更麻烦了。所以就有服务发现的模式出来了，有很多种实现的方式，consul，dns等等，针对我们现有的平台，我们选择了file_sd_config:
 

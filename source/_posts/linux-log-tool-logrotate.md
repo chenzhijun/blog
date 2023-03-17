@@ -1,7 +1,7 @@
 ---
 title: Linux 日志管理工具 - Logrotate
 copyright: true
-date: 2020-05-20 22:35:30
+date: 2021-05-20 22:35:30
 tags: Linux
 categories: Linux
 ---

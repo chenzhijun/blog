@@ -1,7 +1,7 @@
 ---
 title: Openshift 专属机方案
 copyright: true
-date: 2021-02-17 20:59:00
+date: 2022-02-17 20:59:00
 tags: Kubernetes
 categories: Kubernetes
 ---

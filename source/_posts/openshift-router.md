@@ -1,7 +1,7 @@
 ---
 title: OpenShift 专用 Router 实操
 copyright: true
-date: 2021-02-27 22:53:35
+date: 2022-02-27 22:53:35
 tags: Kubernetes
 categories: Kubernetes
 ---

@@ -1,7 +1,7 @@
 ---
 title: SpringBoot&SpringCloud 组件容器化方案
 copyright: true
-date: 2021-09-19 21:02:42
+date: 2023-01-08 21:02:42
 tags: Kubernetes
 categories: Kubernetes
 ---

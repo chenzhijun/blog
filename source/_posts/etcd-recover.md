@@ -1,7 +1,7 @@
 ---
 title: ETCD 主机恢复
 copyright: true
-date: 2021-12-19 23:01:09
+date: 2022-12-19 23:01:09
 tags: Kubernetes
 categories: Kubernetes
 ---

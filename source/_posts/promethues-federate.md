@@ -1,8 +1,8 @@
 ---
-title: promethues 联邦集群
+title: Promethues 联邦集群
 copyright: true
-date: 2018-05-10 12:47:24
-tags: prometheus
+date: 2022-05-10 12:03:19
+tags: Prometheus
 categories: 监控
 ---
 

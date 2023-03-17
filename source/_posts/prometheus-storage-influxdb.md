@@ -1,12 +1,12 @@
 ---
-title: prometheus 使用influxdb 做永久存储
+title: Prometheus 使用 influxdb 做永久存储
 copyright: true
-date: 2018-06-09 16:04:43
-tags: prometheus
+date: 2022-06-09 16:03:19
+tags: Prometheus
 categories: 监控
 ---
 
-# prometheus 使用远端存储
+# Prometheus 使用远端存储
 
 使用Prometheus的过程中，我们可以发现Prometheus默认是自己带有存储的，不过保存的时间为15天。但是对于公司而言，可能有时候会对数据进行统计分析，那么15天的数据将不会满足要求了。所以我们希望能够将数据永久存储起来，或者说能够让我们自己将数据进行处理。
 

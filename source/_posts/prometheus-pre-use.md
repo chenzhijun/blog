@@ -1,25 +1,25 @@
 ---
-title: prometheus 初体验
+title: Prometheus 体验
 copyright: true
-date: 2018-04-16 13:55:50
+date: 2022-04-16 13:03:19
 tags: prometheus
 categories: 监控
 ---
 
-# prometheus 监控
+# Prometheus 监控
 
-普罗米修斯主要的是从被监控项目中获取metrics。架构全景图：
+ Prometheus [普罗米修斯]主要的是从被监控项目中获取metrics。架构全景图：
 
 ![2018-04-16-14-32-33](/images/qiniu/2018-04-16-14-32-33.png)
 
 ## 安装与使用
 
-Prometheus 的安装方式很多，我在本地是使用windows的包，Prometheus自打出生就支持docker所以，如果是*inx机器，建议安装docker然后体验。在本地我仅仅只需要执行目录下的`prometheus.exe`就可以就可以进行体验了。Prometheus服务自身也会暴露出metrics，用来对自身进行指标收集和监控。在根目录最重要的一个配置文件是`prometheus.yml`，里面有三类大属性：global，rule_files，scrape_configs。具体的配置信息可以看这个：
+Prometheus 的安装方式很多，我在本地是使用windows的包，Prometheus自打出生就支持docker所以，如果是*inx机器，建议安装docker然后体验。在本地我仅仅只需要执行目录下的`prometheus`就可以就可以进行体验了。Prometheus服务自身也会暴露出metrics，用来对自身进行指标收集和监控。在根目录最重要的一个配置文件是`prometheus.yml`，里面有三类大属性：global，rule_files，scrape_configs。具体的配置信息可以看这个：
 [https://prometheus.io/docs/prometheus/latest/configuration/configuration/](https://prometheus.io/docs/prometheus/latest/configuration/configuration/)，也可以看看中文文档：[https://songjiayang.gitbooks.io/prometheus/configuration/](https://songjiayang.gitbooks.io/prometheus/configuration/)
 
 <!--more-->
 
-在Prometheus的后台`localhost:9090`，选择一个metric，然后点击execute，之后就可以在下面的graph和console中看到输出的结果：
+在Prometheus的后台`localhost:9090`，选择一个 metric，然后点击 execute，之后就可以在下面的graph和console中看到输出的结果：
 
 ![2018-04-18-22-18-09](/images/qiniu/2018-04-18-22-18-09.png)
 

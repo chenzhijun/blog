@@ -1,7 +1,7 @@
 ---
 title: nginx-and-haproxy-config
 copyright: true
-date: 2020-10-06 22:24:08
+date: 2021-10-06 22:24:08
 tags:
 categories:
 ---
