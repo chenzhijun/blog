@@ -43,11 +43,12 @@ Flannel 安装完之后，会在主机上创建一个Flannel0的设备，它是�
 
 那当flanneld收到flannel0转过来的IP包，然后怎么转发到这个IP了？这就是我们在flannel中的主要配置：子网的功劳了。主网与宿主机的关系保存在etcd中：`etcdctl ls /coreos.com/network/subnets` 所以我们可以看到，当a主机的flanneld收到ip包之后，只要将ip进行匹配就能知道要转发到那个主机上。这个流程能完成的原因就是每个主机上都启动了一个flanneld，都监听这8285的一个端口，，所以flanneld只要把udp包发往b主机的8285端口就行。而接下来，flanneld再把这个IP包发送给它管理的TUN设备，也就是flannel0设备，就可以找到对应的容器了。以下为示意图：
 
-![img](/Users/chenzhijun916/Documents/doc/flannel-跨主机通信-udp.png)
+![图 2](/images/qiniu/1679408009109-flannel-%E8%B7%A8%E4%B8%BB%E6%9C%BA%E9%80%9A%E4%BF%A1-udp.png)  
+
 
 但是为什么udp模式最后被放弃了？其实tun设备还是一个在三层的Overlay网络，比起两台宿主机的直接通信，flannel还做了一个通过flanneld进程进行封装的过程，这也导致flannel性能不好的直接原因，它需要在用户态和内核态直接进行3次转换。
 
-![img](/Users/chenzhijun916/Documents/doc/flanned-udp-废弃的原因.png)
+![图 3](/images/qiniu/1679408053501-flanned-udp-%E5%BA%9F%E5%BC%83%E7%9A%84%E5%8E%9F%E5%9B%A0.png)  
 
 
 
@@ -55,11 +56,11 @@ Flannel 安装完之后，会在主机上创建一个Flannel0的设备，它是�
 
 VTEP设备其实有点类似之前说的TUN设备，不过它是作用在二层上，对二层的数据帧进行封装和解封，而且这个工作全部是在内核里完成的。
 
-![img](/Users/chenzhijun916/Documents/doc/flannel-vxlan模式.png)
+![图 4](/images/qiniu/1679408065526-flannel-vxlan%E6%A8%A1%E5%BC%8F.png)  
 
 可以看到每个主机都有一个flannel.1的设备，就是vxlan所需的vtep设备，它既有IP地址，也有mac地址。
 
-现在容器 A 要访问容器 B，流程是怎样的呢？
+现在容器 A 要访问容器 B ，流程是怎样的呢？
 
 首先 A 发出的IP 包，会先出现在docker0网桥，然后被路由到本机设备 flannel.1 进行处理，这个我们可以叫它原始包。
 
