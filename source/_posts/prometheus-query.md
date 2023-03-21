@@ -1,7 +1,7 @@
 ---
 title: Prometheus 常用的查询语句
 copyright: true
-date: 2022-07-16 17:03:19
+date: 2022-06-16 17:03:19
 tags: Prometheus
 categories: 监控
 ---

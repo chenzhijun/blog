@@ -1,7 +1,7 @@
 ---
 title: PaaS 平台应当具备的能力
 copyright: true
-date: 2023-02-16 13:23:12
+date: 2023-01-16 13:23:12
 tags: PaaS
 categories: Paas
 ---

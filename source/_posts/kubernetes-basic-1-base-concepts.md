@@ -1,7 +1,7 @@
 ---
 title: kubernetes 基础 一（简介与核心组件介绍）
 copyright: true
-date: 2023-03-07 22:51:32
+date: 2022-11-07 22:51:32
 tags: Kubernetes
 categories: Kubernetes
 ---
