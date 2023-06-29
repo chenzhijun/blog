@@ -1,12 +1,12 @@
 ---
-title: 容器网络 - 三层网络解决
+title: 容器网络 - 三层网络解决方案
 copyright: true
 date: 2023-06-29 22:05:44
 tags: Kubernetes
 categories: Kubernetes
 ---
 
-# 容器网络 - 三层网络解决
+# 容器网络 - 三层网络解决方案
 
 
 前面两篇了解了kubernetes容器网络和CNI插件的主要工作原理。除了这种模式外，还有一种纯三层的网络方案，如Flannel的host-gw和Calico项目。
